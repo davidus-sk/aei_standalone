@@ -1,0 +1,12 @@
+[Unit]
+Description=Monitor tag directory and send emails
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/app/aei/bin/monitor_tag_directory.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
