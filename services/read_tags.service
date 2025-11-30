@@ -1,0 +1,12 @@
+[Unit]
+Description=Read tags from the reader and schedule them for sending
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/app/aei/bin/read_tags.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
